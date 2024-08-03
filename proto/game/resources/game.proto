@@ -29,6 +29,13 @@ enum ObjectKind {
   OBJECT_KIND_RECTANGULAR = 1;
 }
 
+enum Mode {
+  MODE_UNKNOWN = 0;
+  MODE_TIME_ATTACK = 1;
+  MODE_MULTI = 2;
+  MODE_TRAINING = 3;
+}
+
 message Vector3 {
   double x = 1;
   double y = 2;
@@ -39,6 +46,9 @@ message Player {
   string player_id = 1;
   string name = 2;
   string color = 3;
+  int32 score = 4;
+  int32 rank = 5;
+  int32 time = 6;
 };
 
 message Object {
@@ -66,3 +76,4 @@ message Hand {
   Vector3 center_position = 3;
   Vector3 action_position = 4;
 }
+
