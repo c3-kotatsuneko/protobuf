@@ -23,3 +23,8 @@ push: lint
 
 release:
 	git tag -a v${VERSION} -m "Release v${VERSION}"
+
+DD_COUNT:=$(shell find docs/DesignDog -type f | wc -l | tr -d ' ') 
+
+dd:
+	npx scaffdog generate DD --output 'docs/DesignDog' --answer 'number:${DD_COUNT}'
