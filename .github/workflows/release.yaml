@@ -27,8 +27,8 @@ jobs:
       - name: Install buf
         run: |
           wget "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-$(uname -s)-$(uname -m)"
-          chmod +x buf-Linux-x86_64
-          sudo mv buf-Linux-x86_64 /usr/local/bin/buf
+          chmod +x buf-$(uname -s)-$(uname -m)
+          sudo mv buf-$(uname -s)-$(uname -m) /usr/local/bin/buf
 
       - name: Generate code
         run: |
@@ -36,13 +36,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Publish to npm
-        run: |
-          npm version patch
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit generated code
         id: commit_generated_code
@@ -91,6 +84,13 @@ jobs:
           release_name: ${{ steps.commit_generated_code.outputs.TAG_NAME }}
           draft: false
           prerelease: false
+
+      - name: Publish to npm
+        run: |
+          npm version patch
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Trigger Update Swagger Hub Workflow
         run: |
