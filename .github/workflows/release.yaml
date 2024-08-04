@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          registry-url: "https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install buf
         run: |
@@ -87,11 +87,11 @@ jobs:
           prerelease: false
 
       - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm version patch
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Trigger Update Swagger Hub Workflow
         run: |
