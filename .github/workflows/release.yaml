@@ -18,6 +18,12 @@ jobs:
         with:
           go-version: "1.22"
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
       - name: Install buf
         run: |
           wget "https://github.com/bufbuild/buf/releases/download/v1.34.0/buf-$(uname -s)-$(uname -m)"
@@ -27,6 +33,16 @@ jobs:
       - name: Generate code
         run: |
           buf generate
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Publish to npm
+        run: |
+          npm version patch
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit generated code
         id: commit_generated_code

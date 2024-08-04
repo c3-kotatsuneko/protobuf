@@ -1,0 +1,25 @@
+{
+  "name": "kotatsuneko-protobuf",
+  "version": "1.0.0",
+  "description": "package for kotatsuneko",
+  "main": "gen/game/rpc/game_pb.js",
+  "types": "gen/game/rpc/game_pb.d.ts",
+  "scripts": {
+    "build": "buf generate",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kotatsuneko/protobuf.git"
+  },
+  "keywords": [
+    "protobuf",
+    "buf",
+    "javascript"
+  ],
+  "author": "K-Kizuku",
+  "license": "MIT",
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.0.0"
+  }
+}
