@@ -93,9 +93,6 @@ jobs:
           npm version patch
           npm publish
 
-      - name: Commit Publish Version
-        id: commit_publish_version
-        run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch
