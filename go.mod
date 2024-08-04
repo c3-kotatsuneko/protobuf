@@ -1,4 +1,4 @@
-module github.com/K-Kizuku/kotatuneko-protobuf
+module github.com/c3-kotatsuneko/protobuf
 
 go 1.22.5
 
