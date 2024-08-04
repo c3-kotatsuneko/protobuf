@@ -1,9 +1,8 @@
 {
   "name": "kotatsuneko-protobuf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "package for kotatsuneko",
-  "main": "gen/game/rpc/game_pb.js",
-  "types": "gen/game/rpc/game_pb.d.ts",
+  "main": "./index.js",
   "scripts": {
     "build": "buf generate",
     "prepublishOnly": "npm run build"

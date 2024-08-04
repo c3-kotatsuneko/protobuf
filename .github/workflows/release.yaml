@@ -93,6 +93,16 @@ jobs:
           npm version patch
           npm publish
 
+      - name: Commit generated code
+        id: commit_publish_version
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "🏷️ release npm package"
+          git pull --rebase origin main 
+          git push
+
       - name: Trigger Update Swagger Hub Workflow
         run: |
           curl -X POST \
