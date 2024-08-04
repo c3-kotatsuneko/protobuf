@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          registry-url: "https://registry.npmjs.org"
+          registry-url: "https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
 
       - name: Install buf
         run: |
