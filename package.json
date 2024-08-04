@@ -1,6 +1,6 @@
 {
   "name": "kotatsuneko-protobuf",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "package for kotatsuneko",
   "main": "./index.js",
   "scripts": {
