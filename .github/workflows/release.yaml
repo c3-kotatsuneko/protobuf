@@ -101,7 +101,7 @@ jobs:
           git add .
           git commit -m "🏷️ release npm package"
           git pull --rebase origin main 
-          git push
+          git push origin main
 
       - name: Trigger Update Swagger Hub Workflow
         run: |
