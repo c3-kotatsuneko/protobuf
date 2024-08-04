@@ -90,15 +90,14 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm version patch
-          npm publish
-
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch
           git pull --rebase origin main
-          git add .
-          git commit -m "🏷️ release npm package"
+
+          npm version patch
+          npm publish
+
           git push origin main
 
       - name: Trigger Update Swagger Hub Workflow
