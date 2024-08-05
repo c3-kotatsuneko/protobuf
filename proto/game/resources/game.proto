@@ -11,6 +11,13 @@ enum GameState {
   GAME_STATE_RESULT = 5;
 }
 
+enum Event {
+  EVENT_UNKNOWN = 0;
+  EVENT_TIME_ATTACK = 1;
+  EVENT_MULTI = 2;
+  EVENT_TRAINING = 3;
+}
+
 enum HandState {
   HAND_STATE_UNKNOWN = 0;
   HAND_STATE_HOLDING = 1;
