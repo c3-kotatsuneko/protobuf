@@ -9,6 +9,7 @@ import "game/resources/game.proto";
 message GameStatusRequest {
     string room_id = 1;
     game.resources.Event event = 2;
+    game.resources.Mode mode = 3;
     game.resources.Player players = 3;
 }
 
