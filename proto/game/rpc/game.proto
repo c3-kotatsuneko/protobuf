@@ -10,14 +10,15 @@ message GameStatusRequest {
     string room_id = 1;
     game.resources.Event event = 2;
     game.resources.Mode mode = 3;
-    game.resources.Player players = 4;
+    game.resources.Player player = 4;
 }
 
 message GameStatusResponse {
     string room_id = 1;
     game.resources.Event event = 2;
-    repeated game.resources.Player players = 3;
-    int32 time = 4;
+    game.resources.Mode mode = 3;
+    repeated game.resources.Player players = 4;
+    int32 time = 5;
 }
 
 message PhysicsInitRequest {
