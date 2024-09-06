@@ -46,13 +46,6 @@ enum Mode {
   MODE_TRAINING = 3;
 }
 
-emun Direction {
-  DIRECTION_FRONT = 0;
-  DIRECTION_BACK = 1;
-  DIRECTION_RIGHT = 2;
-  DIRECTION_LEFT = 3;
-}
-
 message Vector3 {
   double x = 1;
   double y = 2;
@@ -66,7 +59,6 @@ message Player {
   int32 score = 4;
   int32 rank = 5;
   int32 time = 6;
-  Direction direction = 7;
 };
 
 message Object {
