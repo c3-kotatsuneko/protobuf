@@ -18,7 +18,8 @@ enum Event {
   EVENT_TIMER = 3;
   EVENT_STATS = 4;
   EVENT_RESULT = 5;
-  EVENT_EXIT_ROOM = 6;
+  EVENT_STACK_BLOCK = 6;
+  EVENT_EXIT_ROOM = 7;
 }
 
 enum HandState {
