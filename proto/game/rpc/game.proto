@@ -38,7 +38,8 @@ message PhysicsInitResponse {
 message PhysicsRequest {
     string sender_id = 1;
     string room_id = 2;
-    game.resources.Hand hands = 3;
+    // game.resources.Hand hands = 3;
+    repeated game.resources.Object objects = 3;
 }
 
 message PhysicsResponse {
